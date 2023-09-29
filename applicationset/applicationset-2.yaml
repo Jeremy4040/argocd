@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: my-app-set
+spec:
+  generators:
+    - list:
+        elements:
+          - name: apps
+          - name: dev
+

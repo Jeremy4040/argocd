@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-app-2
+  namespace: argocd
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+    project: deploy-2
+  source:
+    path: deploy-2
+    repoURL: https://github.com/Jeremy4040/argocd.git
+    targetRevision: HEAD
